@@ -8,4 +8,7 @@ export default class InvestimentoRepresentation {
     valorCompraReferencia?: number = undefined;
 
     valorVendaReferencia?: number = undefined;
+    @notNull()
+    link: string = ""
+
 }
