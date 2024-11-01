@@ -19,6 +19,6 @@ function loadModules(dir: string) {
     return swaggerJsonDefinition;
 }
 export  function getSwaggerRepresentation(){
-
+    console.log(swaggerJsonDefinition)
     return loadModules(path.join(__dirname, "/representation"));
 }
