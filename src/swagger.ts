@@ -4,11 +4,15 @@ import { generateSwaggerRepresentation , swaggerJsonDefinition} from "projeto_va
 
 
 function loadModules(dir: string) {
-    fs.readdirSync(dir).filter(file => !file.includes(".d.")).forEach(file => {
-        const filePath = path.join(dir, file);
+    fs.readdirSync(dir, { withFileTypes: true }).filter(file => !file.name.includes(".d.")).forEach(file => {
+        const filePath = path.join(dir, file.name);
         
         // Verifica se é um arquivo TypeScript e não é o próprio arquivo index.ts
-        if (file.endsWith('.ts') || file.endsWith(".js")) {
+        const fullPath = path.join(dir, file.name);
+        if (file.isDirectory()){
+            loadModules(fullPath)
+        }
+        if (file.name.endsWith('.ts') || file.name.endsWith(".js")) {
             const moduleExports = require(filePath);
             Object.keys(moduleExports).forEach(key=> {
                 generateSwaggerRepresentation(new moduleExports[key]());

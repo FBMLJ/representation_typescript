@@ -1,7 +1,7 @@
 import { field } from "projeto_validacao";
 
 
-export default class InvestimentoRepresentation {
+export  class InvestimentoRepresentation {
     @field({type: "string", required: true})
     name!: string;
     @field({type: "number"})

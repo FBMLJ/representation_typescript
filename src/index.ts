@@ -1,5 +1,11 @@
-import LoginRepresentation from "./representation/loginRepresentation"
-import InvestimentoRepresentation from "./representation/investimentoRepresentation"
+import { LoginRepresentationRequest } from "./representation/requestBody/loginRepresentation"
+import { InvestimentoRepresentation } from "./representation/general/investimentoRepresentation"
 import {getSwaggerRepresentation} from "./swagger"
+import { MessagemPadraoReponse } from "./representation/responseBody/MessagemPadraoResponse"
 
-export {LoginRepresentation, InvestimentoRepresentation, getSwaggerRepresentation}
+export {
+    LoginRepresentationRequest, 
+    InvestimentoRepresentation,
+    getSwaggerRepresentation,
+    MessagemPadraoReponse
+}

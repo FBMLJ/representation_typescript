@@ -1,9 +1,9 @@
 import { field } from "projeto_validacao"
-export default class LoginRepresentation {
+export  class LoginRepresentationRequest {
 
     @field({type: "string", required: true})
-    email: string = "";
+    email!: string;
     @field({type: "string", required: true})
-    senha : string = "";
+    senha!: string;
 
 }
