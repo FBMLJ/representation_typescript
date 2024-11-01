@@ -1,9 +1,9 @@
-import { notNull } from "projeto_validacao"
+import { field } from "projeto_validacao"
 export default class LoginRepresentation {
 
-    @notNull()
+    @field({type: "string", required: true})
     email: string = "";
-    @notNull()
+    @field({type: "string", required: true})
     senha : string = "";
 
 }

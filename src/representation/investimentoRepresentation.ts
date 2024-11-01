@@ -1,31 +1,14 @@
-import { notNull } from "projeto_validacao";
+import { field } from "projeto_validacao";
 
-/**
- * @swagger
- * components:
- *   schemas:
- *     Investimento:
- *       type: object
- *       properties:
- *         id:
- *           type: string
- *           description: O ID do investimento
- *         valor:
- *           type: number
- *           description: O valor do investimento
- *         descricao:
- *           type: string
- *           description: A descrição do investimento
- */
+
 export default class InvestimentoRepresentation {
-    @notNull()
-    name: string = ""
-
-    
-    valorCompraReferencia?: number = undefined;
-
-    valorVendaReferencia?: number = undefined;
-    @notNull()
-    link: string = ""
+    @field({type: "string", required: true})
+    name!: string;
+    @field({type: "number"})
+    valorCompraReferencia?: number ;
+    @field({type: "number"})
+    valorVendaReferencia?: number;
+    @field({type: "string", required: true})
+    link!: string;
 
 }
